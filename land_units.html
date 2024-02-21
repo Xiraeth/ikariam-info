@@ -38,6 +38,18 @@
 
     <i class="fa-regular fa-moon" id="themeBtn"></i>
 
+    <div class="options">
+      <label for="codeOfHonour"
+        >Code of Honour <span>(-4% upkeep)</span
+        ><input type="checkbox" name="code_of_honour_check" id="codeOfHonour"
+      /></label>
+
+      <label for="logistics"
+        >Logistics <span>(-8% upkeep)</span
+        ><input type="checkbox" name="logistics_check" id="logistics"
+      /></label>
+    </div>
+
     <div class="container">
       <div class="unitContainer">
         <h3>Spearman</h3>
@@ -315,7 +327,7 @@
         <h2>
           Total upkeep:
           <div id="totalUpkeep">
-            <span></span>
+            <span>0</span>
             <img
               src="images/Gold_small.webp"
               height="20"
@@ -327,6 +339,6 @@
       </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="land_units.js"></script>
   </body>
 </html>

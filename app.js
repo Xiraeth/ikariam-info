@@ -11,14 +11,14 @@ $("#themeBtn").click(function () {
   if (theme === "dark") {
     $(":root").css("--bg-color", WHITE_COLOUR);
     $(":root").css("--text-color", DARK_COLOUR);
-    $(":root").css("--header-color", HEADER_LIGHT);
+    $(":root").css("--navbar-color", HEADER_LIGHT);
     $("#themeBtn").toggleClass("fa-sun");
     $("#themeBtn").toggleClass("fa-moon");
     theme = "light";
   } else {
     $(":root").css("--bg-color", DARK_COLOUR);
     $(":root").css("--text-color", WHITE_COLOUR);
-    $(":root").css("--header-color", HEADER_DARK);
+    $(":root").css("--navbar-color", HEADER_DARK);
     $("#themeBtn").toggleClass("fa-sun");
     $("#themeBtn").toggleClass("fa-moon");
     theme = "dark";

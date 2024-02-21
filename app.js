@@ -137,6 +137,14 @@ $("#doctorInput").on("input", function () {
   calcTotalUpkeep();
 });
 
+$("#spartanInput").on("input", function () {
+  const result = Math.round($(this).val() * 1.6);
+  const span = $(this).parent().find("span");
+  span.text(result);
+  calcTotalPoints();
+  calcTotalUpkeep();
+});
+
 function calcTotalPoints() {
   let totalPoints = 0;
 

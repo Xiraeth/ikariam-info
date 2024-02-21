@@ -16,7 +16,7 @@ body {
 }
 
 * {
-  padding: 0;  
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
@@ -26,15 +26,15 @@ header {
   top: 0px;
   right: 0px;
   left: 0px;
-  height: 100px;
+  height: 75px;
   background-color: var(--header-color);
 }
 
 #themeBtn {
-  color: var(--text-color);
+  color: rgb(51, 52, 64);
   font-size: 2rem;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 40px;
 }
@@ -78,7 +78,6 @@ header {
   font-size: 1.2rem;
 }
 
-
 #totalPointsContainer {
   margin-top: 30px;
   text-align: center;
@@ -95,6 +94,7 @@ header {
   align-items: center;
   width: 40%;
   margin: auto;
+  margin-top: 3rem;
 }
 
 #infoContainer > div {

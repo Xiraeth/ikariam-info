@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Land units</title>
+    <script
+      src="https://kit.fontawesome.com/00de2a7224.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="https://lobby.ikariam.gameforge.com/en_GB/hub" target="_blank">
+          <img
+            src="images/ikariam-logo-ezgif.com-webp-to-jpg-converter-removebg-preview.png"
+            alt="ikariam-logo"
+            height="75"
+            width="75"
+          />
+        </a>
+      </div>
+      <div class="links">
+        <div class="home">
+          <a href="index.html">Home</a>
+        </div>
+        <div class="landUnits">
+          <a href="land_units.html">Land units</a>
+        </div>
+        <div class="navalUnits">
+          <a href="naval_units.html">Naval units</a>
+        </div>
+      </div>
+    </nav>
+
+    <i class="fa-regular fa-moon" id="themeBtn"></i>
+
+    <div class="container">
+      <div class="unitContainer">
+        <h3>Spearman</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Spearman"
+          target="_blank"
+        >
+          <img
+            src="images/Spearman.webp"
+            width="130"
+            height="100"
+            alt="Spearman"
+          />
+        </a>
+        <input type="number" id="spearmanInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="1">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Slinger</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Slinger"
+          target="_blank"
+          ><img
+            src="images/Slinger.webp"
+            width="130"
+            height="100"
+            alt="Slinger"
+        /></a>
+        <input type="number" id="slingerInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="2">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Swordsman</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Swordsman"
+          target="_blank"
+        >
+          <img
+            src="images/Swordsman.webp"
+            width="130"
+            height="100"
+            alt="Swordsman"
+          />
+        </a>
+        <input type="number" id="swordsmanInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="4">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Hoplite</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Hoplite"
+          target="_blank"
+          ><img
+            src="images/Hoplite.webp"
+            width="130"
+            height="100"
+            alt="Hoplite"
+        /></a>
+        <input type="number" id="hopliteInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="3">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Ram</h3>
+        <a href="https://ikariam.fandom.com/wiki/Unit-ship:Ram" target="_blank"
+          ><img src="images/Ram.webp" width="160" height="100" alt="Ram"
+        /></a>
+        <input type="number" id="ramInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="15">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Archer</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Archer"
+          target="_blank"
+          ><img src="images/Archer.webp" width="130" height="100" alt="Archer"
+        /></a>
+        <input type="number" id="archerInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="4">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Catapult</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Catapult"
+          target="_blank"
+        >
+          <img
+            src="images/Catapult.webp"
+            width="150"
+            height="100"
+            alt="Catapult"
+          />
+        </a>
+        <input type="number" id="catapultInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="25">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Carabineer</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Sulphur_Carabineer"
+          target="_blank"
+        >
+          <img
+            src="images/Sulphur_Carabineer.webp"
+            width="120"
+            height="100"
+            alt="Sulphur Carabineer"
+          />
+        </a>
+        <input type="number" id="carabineerInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="3">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Steam Giant</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Steam_Giant"
+          target="_blank"
+        >
+          <img
+            src="images/Steam_Giant.webp"
+            width="120"
+            height="100"
+            alt="Steam Giant"
+          />
+        </a>
+        <input type="number" id="giantInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="12">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Mortar</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Mortar"
+          target="_blank"
+          ><img src="images/Mortar.webp" width="120" height="100" alt="Slinger"
+        /></a>
+        <input type="number" id="mortarInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="30">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Balloon Bombardier</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Balloon-Bombardier"
+          target="_blank"
+        >
+          <img
+            src="images/Balloon-Bombardier.webp"
+            width="90"
+            height="100"
+            alt="Slinger"
+          />
+        </a>
+        <input type="number" id="bombardInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="45">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Gyrocopter</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Gyrocopter"
+          target="_blank"
+        >
+          <img
+            src="images/Gyrocopter.webp"
+            width="100"
+            height="100"
+            alt="Gyrocopter"
+          />
+        </a>
+        <input type="number" id="gyrocopterInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="15">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Cook</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Cook"
+          target="_blank"
+        >
+          <img src="images/Cook.webp" width="100" height="100" alt="Cook" />
+        </a>
+        <input type="number" id="cookInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="10">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Doctor</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Doctor"
+          target="_blank"
+          ><img src="images/Doctor.webp" width="100" height="100" alt="Doctor"
+        /></a>
+        <input type="number" id="doctorInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="20">0</span>
+        </div>
+      </div>
+
+      <div class="unitContainer">
+        <h3>Spartans</h3>
+        <a
+          href="https://ikariam.fandom.com/wiki/Unit-ship:Spartan"
+          target="_blank"
+          ><img
+            src="images/Spartan.webp"
+            width="100"
+            height="100"
+            alt="Spartan"
+        /></a>
+        <input type="number" id="spartanInput" />
+        <div>
+          <div>Points:</div>
+          <span class="militaryPoints" data-upkeep="0">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="infoContainer">
+      <div id="totalPointsContainer">
+        <h2>
+          Total military points:
+          <span id="totalPoints">0</span>
+        </h2>
+      </div>
+
+      <div id="totalUpkeepContainer">
+        <h2>
+          Total upkeep:
+          <div id="totalUpkeep">
+            <span></span>
+            <img
+              src="images/Gold_small.webp"
+              height="20"
+              width="20"
+              alt="Gold icon"
+            />/hour
+          </div>
+        </h2>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

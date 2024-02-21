@@ -1,8 +1,8 @@
 :root {
   font-size: 16px;
   --text-color: rgb(51, 52, 64);
-  --text-color-hover: black;
   --bg-color: #f6f6b8;
+  --header-color: #ebeb6d;
 }
 
 body {
@@ -12,6 +12,7 @@ body {
   color: var(--text-color);
   min-height: 100vh;
   transition: background-color 0.15s;
+  margin-top: 120px;
 }
 
 * {
@@ -20,10 +21,14 @@ body {
   box-sizing: border-box;
 }
 
-h1 {
-  color: var(--text-color);
+header {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 100px;
+  background-color: var(--header-color);
 }
-
 
 #themeBtn {
   color: var(--text-color);
@@ -64,7 +69,62 @@ h1 {
   text-align: center;
 }
 
+.unitContainer > div {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
 #totalPointsContainer {
   margin-top: 30px;
   text-align: center;
+}
+
+#totalUpkeepContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  margin: auto;
+}
+
+#infoContainer > div {
+  width: 100%;
+}
+
+#infoContainer > div > h2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#totalUpkeep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  #infoContainer > div > h2 {
+    flex-direction: column;
+  }
 }

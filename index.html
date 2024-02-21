@@ -9,87 +9,115 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
+  <nav></nav>
+
+  <header>
+    
+  </header>
+
   <i class="fa-regular fa-moon" id="themeBtn"></i>
   <div class="container">
     <div class="unitContainer">
       <h3>Spearman</h3>
       <img src="images/Spearman.webp" width="130" height="100" alt="Spearman">
       <input type="number" id="spearmanInput">
-      <div>Points: </div>
-      <span class="militaryPoints" data-upkeep="1">0</span>
+      <div>
+        <div>Points: </div>
+        <span class="militaryPoints" data-upkeep="1">0</span>
+      </div>
     </div>
 
     <div class="unitContainer">
       <h3>Slinger</h3>
       <img src="images/Slinger.webp" width="130" height="100" alt="Slinger">
       <input type="number" id="slingerInput">
-      <div>Points: </div>
-      <span class="militaryPoints" data-upkeep="2">0</span>
+      <div>
+        <div>Points: </div>
+        <span class="militaryPoints" data-upkeep="2">0</span>
+      </div>
     </div>
 
     <div class="unitContainer">
       <h3>Swordsman</h3>
       <img src="images/Swordsman.webp" width="130" height="100" alt="Slinger">
       <input type="number" id="swordsmanInput">
-      <div>Points: </div>
-      <span class="militaryPoints" data-upkeep="4">0</span>
+      <div>
+        <div>Points: </div>
+        <span class="militaryPoints" data-upkeep="4">0</span>
+      </div>
     </div>
 
     <div class="unitContainer">
       <h3>Hoplite</h3>
       <img src="images/Hoplite.webp" width="130" height="100" alt="Slinger">
       <input type="number" id="hopliteInput">
-      <div>Points: </div>
-      <span class="militaryPoints" data-upkeep="3">0</span>
+      <div>
+        <div>Points: </div>
+        <span class="militaryPoints" data-upkeep="3">0</span>
+      </div>
     </div>
 
     <div class="unitContainer">
       <h3>Ram</h3>
       <img src="images/Ram.webp" width="160" height="100" alt="Slinger">
       <input type="number" id="ramInput">
-      <div>Points: </div>
-      <span class="militaryPoints" data-upkeep="15">0</span>
+      <div>
+        <div>Points: </div>
+        <span class="militaryPoints" data-upkeep="15">0</span>
+      </div>
     </div>
 
     <div class="unitContainer">
       <h3>Archer</h3>
       <img src="images/Archer.webp" width="130" height="100" alt="Slinger">
       <input type="number" id="archerInput">
-      <div>Points: </div>
-      <span class="militaryPoints" data-upkeep="4">0</span>
+      <div>
+        <div>Points: </div>
+        <span class="militaryPoints" data-upkeep="4">0</span>
+      </div>
     </div>
 
     <div class="unitContainer">
       <h3>Catapult</h3>
       <img src="images/Catapult.webp" width="150" height="100" alt="Slinger">
       <input type="number" id="catapultInput">
-      <div>Points: </div>
-      <span class="militaryPoints" data-upkeep="25">0</span>
+      <div>
+        <div>Points: </div>
+        <span class="militaryPoints" data-upkeep="25">0</span>
+      </div>
     </div>
 
     <div class="unitContainer">
       <h3>Carabineer</h3>
       <img src="images/Sulphur_Carabineer.webp" width="120" height="100" alt="Slinger">
       <input type="number" id="carabineerInput">
-      <div>Points: </div>
-      <span class="militaryPoints" data-upkeep="3">0</span>
+      <div>
+        <div>Points: </div>
+        <span class="militaryPoints" data-upkeep="3">0</span>
+      </div>
     </div>
 
   </div>
 
-  <div id="totalPointsContainer">
-    <h2>
-      Total military points: 
-      <span id="totalPoints"></span>
-    </h2>
+  <div id="infoContainer">
+    <div id="totalPointsContainer">
+      <h2>
+        Total military points: 
+        <span id="totalPoints"></span>
+      </h2>
+    </div>
+  
+    <div id="totalUpkeepContainer">
+      <h2>
+        Total upkeep: 
+        <div id="totalUpkeep">
+          <span></span>
+          <img src="images/Gold_small.webp" height="20" width="20" alt="Gold icon">/hour
+        </div>
+      </h2>
+    </div>
   </div>
-
-  <div id="totalUpkeepContainer">
-    <h2>
-      Total upkeep: 
-      <span id="totalUpkeep"></span>
-    </h2>
-  </div>
+  
   <script src="app.js"></script>
 </body>
 </html>

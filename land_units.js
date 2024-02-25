@@ -65,7 +65,7 @@ $("#carabineerInput").on("input", function () {
 });
 
 $("#giantInput").on("input", function () {
-  const result = Math.round($(this).val() * 12.4);
+  const result = Math.round($(this).val() * 6.5);
   const span = $(this).parent().find("span");
   span.text(result);
   calcTotalPoints();
@@ -73,7 +73,7 @@ $("#giantInput").on("input", function () {
 });
 
 $("#mortarInput").on("input", function () {
-  const result = Math.round($(this).val() * 62);
+  const result = Math.round($(this).val() * 31);
   const span = $(this).parent().find("span");
   span.text(result);
   calcTotalPoints();
@@ -81,7 +81,7 @@ $("#mortarInput").on("input", function () {
 });
 
 $("#bombardInput").on("input", function () {
-  const result = Math.round($(this).val() * 11.6);
+  const result = Math.round($(this).val() * 5.8);
   const span = $(this).parent().find("span");
   span.text(result);
   calcTotalPoints();

@@ -16,7 +16,7 @@ $("#ballistashipInput").on("input", function () {
   calcTotalUpkeep();
 });
 
-$("#catapulshipInput").on("input", function () {
+$("#catapultshipInput").on("input", function () {
   const result = Math.round($(this).val() * 6.4);
   const span = $(this).parent().find("span");
   span.text(result);
@@ -88,13 +88,18 @@ $("#divingboatInput").on("input", function () {
   calcTotalUpkeep();
 });
 
-$("#codeOfHonour").on("change", function () {
-  codeOfHonour = codeOfHonour === true ? false : true;
+$("#shipMaintenance").on("change", function () {
+  shipMaintenance = shipMaintenance === true ? false : true;
   calcTotalUpkeep();
 });
 
-$("#logistics").on("change", function () {
-  logistics = logistics === true ? false : true;
+$("#pitch").on("change", function () {
+  pitch = pitch === true ? false : true;
+  calcTotalUpkeep();
+});
+
+$("#seaCharts").on("change", function () {
+  seaCharts = seaCharts === true ? false : true;
   calcTotalUpkeep();
 });
 
@@ -121,8 +126,9 @@ function calcTotalUpkeep() {
     totalUpkeep += inputValue * unitUpkeep;
   });
 
-  if (codeOfHonour) discount = 0.04;
-  if (logistics) discount += 0.08;
+  if (shipMaintenance) discount = 0.02;
+  if (pitch) discount += 0.04;
+  if (seaCharts) discount += 0.08;
 
   totalUpkeep = parseFloat(totalUpkeep - totalUpkeep * discount).toFixed(2);
 

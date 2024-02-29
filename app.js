@@ -7,6 +7,9 @@ const HEADER_DARK = "#c7c7c7";
 
 let codeOfHonour = false;
 let logistics = false;
+let shipMaintenance = false;
+let pitch = false;
+let seaCharts = false;
 let theme = localStorage.theme || 'light';
 
 $("document").ready(function () {

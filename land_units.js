@@ -156,7 +156,11 @@ function calcTotalUpkeep() {
   if (codeOfHonour) discount = 0.04;
   if (logistics) discount += 0.08;
 
-  totalUpkeep = parseFloat(totalUpkeep - totalUpkeep * discount).toFixed(2);
+  totalUpkeep = parseFloat(totalUpkeep - totalUpkeep * discount).toLocaleString('en-US', {
+    style: 'decimal',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 
   $("#totalUpkeep").find("span").text(totalUpkeep);
 }

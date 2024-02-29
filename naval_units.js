@@ -6,6 +6,7 @@ $("#ramshipInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#ballistashipInput").on("input", function () {
@@ -14,6 +15,7 @@ $("#ballistashipInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#catapultshipInput").on("input", function () {
@@ -22,6 +24,7 @@ $("#catapultshipInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#fireshipInput").on("input", function () {
@@ -30,6 +33,7 @@ $("#fireshipInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#mortarshipInput").on("input", function () {
@@ -38,6 +42,7 @@ $("#mortarshipInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#rocketshipInput").on("input", function () {
@@ -46,6 +51,7 @@ $("#rocketshipInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#steamramInput").on("input", function () {
@@ -54,6 +60,7 @@ $("#steamramInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#paddlespeedboatInput").on("input", function () {
@@ -62,6 +69,7 @@ $("#paddlespeedboatInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#ballooncarrierInput").on("input", function () {
@@ -70,6 +78,7 @@ $("#ballooncarrierInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#tenderInput").on("input", function () {
@@ -78,6 +87,7 @@ $("#tenderInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#divingboatInput").on("input", function () {
@@ -86,6 +96,7 @@ $("#divingboatInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#shipMaintenance").on("change", function () {
@@ -130,7 +141,36 @@ function calcTotalUpkeep() {
   if (pitch) discount += 0.04;
   if (seaCharts) discount += 0.08;
 
-  totalUpkeep = parseFloat(totalUpkeep - totalUpkeep * discount).toFixed(2);
-
+  totalUpkeep = parseFloat(totalUpkeep - totalUpkeep * discount).toLocaleString('en-US', {
+    style: 'decimal',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
   $("#totalUpkeep").find("span").text(totalUpkeep);
 }
+
+function calculateTotalMaterial() {
+  let totalWood = 0;
+  let totalSulphur = 0;
+  let totalCrystal = 0;
+  let totalCost = 0;
+
+  $(".militaryPoints").each(function () {
+    const input = $(this).parent().prevAll("input");
+    const baseWood = $(this).data("wood");
+    const baseSulphur = $(this).data("sulphur");
+    const baseCrystal = $(this).data("crystal");
+
+    totalSulphur += baseSulphur * input.val();
+    totalWood += baseWood * input.val();
+    totalCrystal += baseCrystal * input.val();
+  });
+
+  totalCost += totalSulphur + totalWood + totalCrystal;
+  
+  $("#totalWood").text(totalWood);
+  $("#totalSulphur").text(totalSulphur);
+  $("#totalCrystal").text(totalCrystal);
+  $("#totalMaterials").text(totalCost);
+}
+

@@ -53,8 +53,6 @@
         >Sea Charts <span>(-8% upkeep)</span
         ><input type="checkbox" name="seaCharts_check" id="seaCharts"
       /></label>
-
-      
     </div>
 
     <div class="container">
@@ -74,7 +72,7 @@
         <input type="number" id="ramshipInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="15">0</span>
+          <span class="militaryPoints" data-upkeep="15" data-wood="250" data-sulphur="0" data-crystal="0">0</span>
         </div>
       </div>
 
@@ -92,7 +90,7 @@
         <input type="number" id="ballistashipInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="20">0</span>
+          <span class="militaryPoints" data-upkeep="20" data-wood="180" data-sulphur="160" data-crystal="0">0</span>
         </div>
       </div>
 
@@ -112,7 +110,7 @@
         <input type="number" id="catapultshipInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="25">0</span>
+          <span class="militaryPoints" data-upkeep="25" data-wood="180" data-sulphur="140" data-crystal="0">0</span>
         </div>
       </div>
 
@@ -130,7 +128,7 @@
         <input type="number" id="fireshipInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="25">0</span>
+          <span class="militaryPoints" data-upkeep="25" data-wood="80" data-sulphur="230" data-crystal="0">0</span>
         </div>
       </div>
 
@@ -139,10 +137,10 @@
         <a href="https://ikariam.fandom.com/wiki/Unit-ship:Mortar_Ship" target="_blank"
           ><img src="images/Mortar_Ship.webp" width="120" height="100" alt="Mortar Ship"
         /></a>
-        <input type="number" id="mortartshipInput" />
+        <input type="number" id="mortarshipInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="50">0</span>
+          <span class="militaryPoints" data-upkeep="50" data-wood="220" data-sulphur="900" data-crystal="0">0</span>
         </div>
       </div>
 
@@ -156,7 +154,7 @@
         <input type="number" id="rocketshipInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="55">0</span>
+          <span class="militaryPoints" data-upkeep="55" data-wood="200" data-sulphur="1200" data-crystal="0">0</span>
         </div>
       </div>
 
@@ -176,7 +174,7 @@
         <input type="number" id="steamramInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="45">0</span>
+          <span class="militaryPoints" data-upkeep="45" data-wood="400" data-sulphur="800" data-crystal="0">0</span>
         </div>
       </div>
 
@@ -196,7 +194,7 @@
         <input type="number" id="paddlespeedboatInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="5">0</span>
+          <span class="militaryPoints" data-upkeep="5" data-wood="40" data-sulphur="280" data-crystal="0">0</span>
         </div>
       </div>
 
@@ -216,7 +214,7 @@
         <input type="number" id="ballooncarrierInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="100">0</span>
+          <span class="militaryPoints" data-upkeep="100" data-wood="700" data-sulphur="700" data-crystal="0">0</span>
         </div>
       </div>
 
@@ -230,7 +228,7 @@
         <input type="number" id="tenderInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="100">0</span>
+          <span class="militaryPoints" data-upkeep="100" data-wood="300" data-sulphur="250" data-crystal="250">0</span>
         </div>
       </div>
 
@@ -250,14 +248,14 @@
         <input type="number" id="divingboatInput" />
         <div>
           <div>Points:</div>
-          <span class="militaryPoints" data-upkeep="50">0</span>
+          <span class="militaryPoints" data-upkeep="50" data-wood="160" data-sulphur="100" data-crystal="750">0</span>
         </div>
       </div>
-
-    
     </div>
 
     <div id="infoContainer">
+    <!--START-->
+    <div id="leftSideInfo">
       <div id="totalPointsContainer">
         <h2>
           Total military points:
@@ -279,6 +277,48 @@
           </div>
         </h2>
       </div>
+
+      <div id="totalWoodContainer">
+        <h2>Total Wood:
+          <div>
+            <span id="totalWood">0</span>
+            <img src="images/Wood_small.webp" alt="Building Material">
+          </div>
+        </h2>
+      </div>
+
+      <div id="totalSulphurContainer">
+        <h2>Total Sulphur:
+          <div>
+            <span id="totalSulphur">0</span>
+            <img src="images/Sulphur_small.webp" alt="Sulphur">
+          </div>
+        </h2>
+      </div>
+
+      <div id="totalCrystalContainer">
+        <h2>Total Crystal:
+          <div>
+            <span id="totalCrystal">0</span>
+            <img src="images/Crystal_small.webp" alt="Crystal">
+          </div>
+        </h2>
+      </div>
+
+      <div id="totalMaterialsContainer">
+        <h2>Total Materials:
+            <span id="totalMaterials">0</span>
+        </h2>
+      </div>
+    </div>
+
+    <div id="rightSideInfo">
+      Wood Reduction: 20%
+    </div>
+
+      
+
+    <!--END-->
     </div>
 
     <script src="naval_units.js"></script>

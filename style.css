@@ -54,9 +54,10 @@ body {
   margin: auto;
   margin-top: 20px;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  /* flex-direction: column; */
   gap: 20px;
   border-bottom: 2px solid black;
   padding-bottom: 15px;
@@ -66,11 +67,11 @@ body {
   width: 50%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .options > label > span {
-  margin-right: auto;
+  margin-right: 20px;
   margin-left: 20px;
   opacity: 0.7;
   font-style: italic;
@@ -120,31 +121,40 @@ body {
   font-size: 1rem;
 }
 
-#totalPointsContainer {
-  margin-top: 30px;
-  text-align: center;
-}
-
-#totalUpkeepContainer {
-  margin-top: 20px;
-  text-align: center;
-}
-
 #infoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 130px;
+  width: 50%;
+  margin: auto;
+}
+
+#leftSideInfo {
+  width: 60%;
+  border-right: 1px solid white;
+  padding-right: 100px;
+}
+#rightSideInfo {
+  width: 30%;
+}
+
+#infoContainer > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
   margin: auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
-#infoContainer > div {
+#infoContainer > div > div {
   width: 100%;
+  margin-top: 20px;
+  text-align: center;
 }
 
-#infoContainer > div > h2 {
+#infoContainer > div > div > h2 {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -167,7 +177,7 @@ body {
     flex-direction: column;
   }
 
-  #infoContainer > div > h2 {
+  #infoContainer > div > div > h2 {
     flex-direction: column;
   }
 }

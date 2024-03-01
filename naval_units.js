@@ -114,6 +114,18 @@ $("#seaCharts").on("change", function () {
   calcTotalUpkeep();
 });
 
+$("#woodReduction").on("input", function() {
+  calculateTotalMaterial();
+})
+
+$("#sulphurReduction").on("input", function() {
+  calculateTotalMaterial();
+})
+
+$("#crystalReduction").on("input", function() {
+  calculateTotalMaterial();
+})
+
 function calcTotalPoints() {
   let totalPoints = 0;
 
@@ -155,22 +167,42 @@ function calculateTotalMaterial() {
   let totalCrystal = 0;
   let totalCost = 0;
 
+
   $(".militaryPoints").each(function () {
     const input = $(this).parent().prevAll("input");
     const baseWood = $(this).data("wood");
     const baseSulphur = $(this).data("sulphur");
     const baseCrystal = $(this).data("crystal");
+    const woodReduction = parseFloat($("#woodReduction").val()) || 0;
+    const sulphurReduction = parseFloat($("#sulphurReduction").val()) || 0;
+    const crystalReduction = parseFloat($("#crystalReduction").val()) || 0;
 
-    totalSulphur += baseSulphur * input.val();
-    totalWood += baseWood * input.val();
-    totalCrystal += baseCrystal * input.val();
+    totalSulphur += baseSulphur * input.val() * ( 1 - sulphurReduction / 100);
+    totalWood += baseWood * input.val() * ( 1 - woodReduction / 100);
+    totalCrystal += baseCrystal * input.val() * ( 1 - crystalReduction / 100);
   });
 
   totalCost += totalSulphur + totalWood + totalCrystal;
   
-  $("#totalWood").text(totalWood);
-  $("#totalSulphur").text(totalSulphur);
-  $("#totalCrystal").text(totalCrystal);
-  $("#totalMaterials").text(totalCost);
+  $("#totalWood").text(totalWood.toLocaleString("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+  }));
+  $("#totalSulphur").text(totalSulphur.toLocaleString("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+  }));
+  $("#totalCrystal").text(totalCrystal.toLocaleString("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+  }));
+  $("#totalMaterials").text(totalCost.toLocaleString("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+  }));
 }
 

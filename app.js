@@ -10,6 +10,7 @@ let logistics = false;
 let shipMaintenance = false;
 let pitch = false;
 let seaCharts = false;
+
 let theme = localStorage.theme || 'light';
 
 $("document").ready(function () {

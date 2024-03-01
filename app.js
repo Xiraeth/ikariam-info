@@ -5,11 +5,12 @@ const WHITE_COLOUR = "#f6f6b8";
 const HEADER_LIGHT = "#ebeb6d";
 const HEADER_DARK = "#c7c7c7";
 
-let codeOfHonour = false;
-let logistics = false;
-let shipMaintenance = false;
-let pitch = false;
-let seaCharts = false;
+let maps = false; // 2% for land units
+let codeOfHonour = false; // 4% for land units
+let logistics = false; // 8% for land units
+let shipMaintenance = false; // 2% for land units
+let pitch = false; // 4% for land units
+let seaCharts = false; // 8% for land units
 
 let theme = localStorage.theme || 'light';
 

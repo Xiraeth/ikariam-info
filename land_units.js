@@ -6,6 +6,7 @@ $("#spearmanInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#slingerInput").on("input", function () {
@@ -14,6 +15,7 @@ $("#slingerInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#swordsmanInput").on("input", function () {
@@ -22,6 +24,7 @@ $("#swordsmanInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#hopliteInput").on("input", function () {
@@ -30,6 +33,7 @@ $("#hopliteInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#ramInput").on("input", function () {
@@ -38,6 +42,7 @@ $("#ramInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#archerInput").on("input", function () {
@@ -46,6 +51,7 @@ $("#archerInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#catapultInput").on("input", function () {
@@ -54,6 +60,7 @@ $("#catapultInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#carabineerInput").on("input", function () {
@@ -62,6 +69,7 @@ $("#carabineerInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#giantInput").on("input", function () {
@@ -70,6 +78,7 @@ $("#giantInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#mortarInput").on("input", function () {
@@ -78,6 +87,7 @@ $("#mortarInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#bombardInput").on("input", function () {
@@ -86,6 +96,7 @@ $("#bombardInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#gyrocopterInput").on("input", function () {
@@ -94,6 +105,7 @@ $("#gyrocopterInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#cookInput").on("input", function () {
@@ -102,6 +114,7 @@ $("#cookInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#doctorInput").on("input", function () {
@@ -110,6 +123,7 @@ $("#doctorInput").on("input", function () {
   span.text(result);
   calcTotalPoints();
   calcTotalUpkeep();
+  calculateTotalMaterial();
 });
 
 $("#spartanInput").on("input", function () {
@@ -117,6 +131,12 @@ $("#spartanInput").on("input", function () {
   const span = $(this).parent().find("span");
   span.text(result);
   calcTotalPoints();
+  calcTotalUpkeep();
+  calculateTotalMaterial();
+});
+
+$("#maps").on("change", function () {
+  maps = maps === true ? false : true;
   calcTotalUpkeep();
 });
 
@@ -129,6 +149,22 @@ $("#logistics").on("change", function () {
   logistics = logistics === true ? false : true;
   calcTotalUpkeep();
 });
+
+$("#woodReduction").on("input", function() {
+  calculateTotalMaterial();
+})
+
+$("#sulphurReduction").on("input", function() {
+  calculateTotalMaterial();
+})
+
+$("#crystalReduction").on("input", function() {
+  calculateTotalMaterial();
+})
+
+$("#wineReduction").on("input", function() {
+  calculateTotalMaterial();
+})
 
 function calcTotalPoints() {
   let totalPoints = 0;
@@ -153,6 +189,7 @@ function calcTotalUpkeep() {
     totalUpkeep += inputValue * unitUpkeep;
   });
 
+  if (maps) discount += 0.02;
   if (codeOfHonour) discount = 0.04;
   if (logistics) discount += 0.08;
 
@@ -163,4 +200,57 @@ function calcTotalUpkeep() {
   });
 
   $("#totalUpkeep").find("span").text(totalUpkeep);
+}
+
+function calculateTotalMaterial() {
+  let totalWood = 0;
+  let totalSulphur = 0;
+  let totalCrystal = 0;
+  let totalWine = 0;
+  let totalCost = 0;
+
+  $(".militaryPoints").each(function () {
+    const input = $(this).parent().prevAll("input");
+    const baseWood = $(this).data("wood");
+    const baseSulphur = $(this).data("sulphur");
+    const baseCrystal = $(this).data("crystal");
+    const baseWine = $(this).data("wine");
+    const woodReduction = parseFloat($("#woodReduction").val()) || 0;
+    const sulphurReduction = parseFloat($("#sulphurReduction").val()) || 0;
+    const crystalReduction = parseFloat($("#crystalReduction").val()) || 0;
+    const wineReduction = parseFloat($("#wineReduction").val()) || 0;
+
+    totalSulphur += baseSulphur * input.val() * ( 1 - sulphurReduction / 100);
+    totalWood += baseWood * input.val() * ( 1 - woodReduction / 100);
+    totalCrystal += baseCrystal * input.val() * ( 1 - crystalReduction / 100);
+    totalWine += baseWine * input.val() * ( 1 - wineReduction / 100);
+  });
+
+  totalCost += totalSulphur + totalWood + totalCrystal + totalWine;
+  
+  $("#totalWood").text(totalWood.toLocaleString("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+  }));
+  $("#totalSulphur").text(totalSulphur.toLocaleString("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+  }));
+  $("#totalCrystal").text(totalCrystal.toLocaleString("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+  }));
+  $("#totalWine").text(totalWine.toLocaleString("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+  }));
+  $("#totalMaterials").text(totalCost.toLocaleString("en-US", {
+    style: "decimal",
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+  }));
 }

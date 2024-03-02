@@ -5,7 +5,7 @@
   --text-color: rgb(51, 52, 64);
   --bg-color: #f6f6b8;
   --navbar-color: #ebeb6d;
-  --navbar-width: 130px;
+  --navbar-height: 100px;
 }
 
 body {
@@ -24,9 +24,8 @@ body {
 }
 
 #welcomeMsg {
-  margin-left: 100px;
   text-align: center;
-  padding-top: 50vh;
+  padding-top: 40vh;
   font-style: italic;
 }
 
@@ -45,51 +44,69 @@ body {
   color: var(--text-color);
   font-size: 2rem;
   cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 40px;
 }
 
 .options {
-  width: 70%;
+  width: 90%;
   margin: auto;
   margin-top: 20px;
   text-align: center;
   font-size: 1.5rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 20px;
   border-bottom: 2px solid black;
   padding-bottom: 15px;
 }
 
-.options > label {
+.options .earlyResearch {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options .earlyResearch > label {
   width: 50%;
   margin: auto;
   display: flex;
   justify-content: center;
+  gap: 50px;
 }
 
-.options > label > span {
-  margin-right: 20px;
-  margin-left: 20px;
+.options .earlyResearch > label span {
   opacity: 0.7;
   font-style: italic;
 }
 
-.options > label > input {
+.options .earlyResearch > label > input {
   width: 20px;
 }
 
-.container {
-  width: 85%;
+.options .futureResearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.options .futureResearch input {
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+  color: var(--text-color);
+  text-align: center;
+  outline: none;
+  font-size: 1.5rem;
+}
+
+.unitsSectionContainer {
   margin-top: 20px;
-  margin-left: 200px;
   /* background-color: black; */
   min-height: 50px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   row-gap: 50px;
 }
@@ -126,27 +143,33 @@ body {
   justify-content: center;
   align-items: center;
   /* padding-left: 130px; */
-  max-width: 50%;
   min-width: 20%;
   margin: auto;
 }
 
 #leftSideInfo {
-  width: 70%;
+  width: 50%;
   border-right: 1px solid var(--text-color);
   padding-right: 50px;
 }
+
 #rightSideInfo {
   width: 30%;
 }
+
 #rightSideInfo > div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+#rightSideInfo > div label {
+  font-size: 1.5rem;
+}
+
 #rightSideInfo > div input {
   width: 50%;
+  font-size: 1.2rem;
   padding: 10px;
   border-radius: 5px;
   background-color: transparent;
@@ -191,25 +214,32 @@ body {
     flex-direction: column;
   }
 
-
   #infoContainer > div > div > h2 {
     flex-direction: column;
   }
 }
 
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 850px) {
   :root {
     font-size: 12px;
   }
 
-  .options {
+  .options .earlyResearch {
     flex-direction: column;
-    align-items: end;
+    align-content: space-between;
+    gap: 20px;
   }
-  
+
+  .options .earlyResearch > label {
+    justify-content: space-between;
+  }
+
   #infoContainer {
     flex-direction: column;
+  }
+
+  #rightSideInfo > div input {
+    width: 100%;
   }
 
   #leftSideInfo {
@@ -218,8 +248,4 @@ body {
     padding-bottom: 50px;
     padding-right: 0;
   }
-}
-
-#content {
-  margin-left: var(--navbar-width);
 }

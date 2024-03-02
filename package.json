@@ -1,0 +1,12 @@
+{
+  "name": "ikariam-info",
+  "version": "1.0.0",
+  "description": "A basic page providing info about various [Ikariam](https://lobby.ikariam.gameforge.com/en_GB/) features, which is meant to function as a [jQuery](https://jquery.com/) practice project.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

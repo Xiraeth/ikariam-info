@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const DARK_COLOUR = "rgb(51, 53, 64)";
 const WHITE_COLOUR = "#f6f6b8";
@@ -13,7 +13,7 @@ let shipMaintenance = false; // 2% for naval units
 let pitch = false; // 4% for naval units
 let seaCharts = false; // 8% for naval units
 
-let theme = localStorage.theme || 'light';
+let theme = localStorage.theme || "light";
 
 $("document").ready(function () {
   if (theme === "light") {

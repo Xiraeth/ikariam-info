@@ -205,9 +205,6 @@ $("document").ready(function () {
     if (logistics) discount += 0.08;
     if (militaristicFuture > 0) discount += militaristicFuture;
 
-    discount = discount.toFixed(2);
-    console.log(discount);
-
     totalUpkeep = parseFloat(
       totalUpkeep - totalUpkeep * discount
     ).toLocaleString("en-US", {

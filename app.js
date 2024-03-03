@@ -5,14 +5,6 @@ const WHITE_COLOUR = "#f6f6b8";
 const HEADER_LIGHT = "#ebeb6d";
 const HEADER_DARK = "#c7c7c7";
 
-let maps = false; // 2% for land units
-let codeOfHonour = false; // 4% for land units
-let logistics = false; // 8% for land units
-
-let shipMaintenance = false; // 2% for naval units
-let pitch = false; // 4% for naval units
-let seaCharts = false; // 8% for naval units
-
 let theme = localStorage.theme || "light";
 
 $("document").ready(function () {

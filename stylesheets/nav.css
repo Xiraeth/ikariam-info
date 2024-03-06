@@ -11,7 +11,7 @@ nav {
   gap: 1rem;
   height: var(--navbar-height);
   padding: 0 1rem;
-  background-color: var(--navbar-color);
+  background-color: var(--navbar-colour);
 }
 
 nav > .logo > a > img {

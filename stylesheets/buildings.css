@@ -1,0 +1,71 @@
+.buildingLink {
+  color: var(--link-colour);
+  transition: all 0.15s;
+  margin-bottom: 10px;
+}
+
+.buildingLink:hover {
+  opacity: 0.8;
+}
+
+.buildingsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+
+  margin: 20px auto 0px;
+  gap: 20px;
+}
+
+.buildingDiv {
+  /* background-color: var(--bg-colour-dim); */
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-colour-dim),
+    var(--bg-colour)
+  );
+  border-radius: 8px;
+  max-width: 250px;
+  border: 1px solid var(--text-colour);
+}
+
+.buildingDiv > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buildingDiv > a > span {
+  font-size: 1.3rem;
+}
+
+.inputsField {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.inputsField input {
+  width: 40%;
+  float: right;
+  padding: 5px 10px;
+}
+
+.materialsField {
+  padding: 15px 15px 5px;
+}
+
+.materialsField p {
+  display: flex;
+  justify-content: space-between;
+}
+
+.materialsField span {
+  display: flex;
+  align-items: center;
+}

@@ -40,10 +40,80 @@
       </div>
     </nav>
 
-    <section id="content">
-      <h1>Buildings:</h1>
-      <p>Town Hall</p>
-      <p>...</p>
+    <section id="content" class="buildingsContainer">
+      <!-- START -->
+      <div class="buildingDiv">
+        <a
+          class="buildingLink"
+          href="https://ikariam.fandom.com/wiki/Building:Academy"
+          target="_blank"
+        >
+          <img
+            src="../images/buildings/Academy_l.webp"
+            alt="Academy"
+            style="width: 40%"
+          />
+          <span>Academy</span>
+        </a>
+
+        <div class="inputsField">
+          <label for="academyCurrent">
+            Current level:
+            <input
+              id="academyCurrent"
+              type="number"
+              class="currentLevel"
+              min="1"
+              max="50"
+            />
+          </label>
+          <label for="academyTarget">
+            Target level:
+            <input
+              id="academyTarget"
+              type="number"
+              class="targetLevel"
+              min="1"
+            />
+          </label>
+        </div>
+
+        <div class="materialsField">
+          <p>
+            Wood required:
+            <span class="woodRequired"
+              >test<img src="../images/Wood_small.webp" alt="Wood"
+            /></span>
+          </p>
+          <p>
+            Wine required:
+            <span class="wineRequired">
+              test <img src="../images/Wine_small.webp" alt="" />
+            </span>
+          </p>
+          <p>
+            Marble required:
+            <span class="marbleRequired">
+              test <img src="../images/Marble_small.webp" alt="" />
+            </span>
+          </p>
+          <p>
+            Crystal required:
+            <span class="crystalRequired">
+              test <img src="../images/Crystal_small.webp" alt="" />
+            </span>
+          </p>
+          <p>
+            Sulphur required:
+            <span class="sulphurRequired">
+              test <img src="../images/Sulphur_small.webp" alt="" />
+            </span>
+          </p>
+        </div>
+
+        <!-- END OF BUILDING DIV -->
+      </div>
+      <!-- END OF CONTENT-->
     </section>
     <script src="../app.js"></script>
   </body>

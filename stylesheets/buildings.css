@@ -1,3 +1,31 @@
+.reductionBuildings {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.reductionBuildings input {
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--text-colour);
+  color: var(--text-colour);
+  text-align: center;
+  outline: none;
+  font-size: 1.5rem;
+}
+
+.separator {
+  display: block;
+  width: 1px;
+  background-color: var(--text-colour);
+  height: 80px;
+}
+
 .buildingLink {
   color: var(--link-colour);
   transition: all 0.15s;
@@ -69,4 +97,14 @@
 .materialsField span {
   display: flex;
   align-items: center;
+}
+
+@media screen and (max-width: 850px) {
+  .reductionBuildings {
+    flex-direction: column;
+  }
+
+  .separator {
+    display: none;
+  }
 }

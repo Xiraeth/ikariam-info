@@ -7,140 +7,21 @@ $("document").ready(function () {
   let allSelected = false; // toggle all surveys
   let militaristicFuture = 0;
 
-  $("#spearmanInput").on("input", function () {
-    const result = Math.round($(this).val() * 0.6);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#slingerInput").on("input", function () {
-    const result = Math.round($(this).val() * 0.4);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#swordsmanInput").on("input", function () {
-    const result = Math.round($(this).val() * 1.2);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#hopliteInput").on("input", function () {
-    const result = Math.round($(this).val() * 1.4);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#ramInput").on("input", function () {
-    const result = Math.round($(this).val() * 4.4);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#archerInput").on("input", function () {
-    const result = Math.round($(this).val() * 1.1);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#catapultInput").on("input", function () {
-    const result = Math.round($(this).val() * 11.2);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#carabineerInput").on("input", function () {
-    const result = Math.round($(this).val() * 4);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#giantInput").on("input", function () {
-    const result = Math.round($(this).val() * 6.5);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#mortarInput").on("input", function () {
-    const result = Math.round($(this).val() * 31);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#bombardInput").on("input", function () {
-    const result = Math.round($(this).val() * 5.8);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#gyrocopterInput").on("input", function () {
-    const result = Math.round($(this).val() * 2.5);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#cookInput").on("input", function () {
-    const result = Math.round($(this).val() * 4);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#doctorInput").on("input", function () {
-    const result = Math.round($(this).val() * 10);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#spartanInput").on("input", function () {
-    const result = Math.round($(this).val() * 1.6);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
+  calculateTroopData("#spearmanInput", 0.6);
+  calculateTroopData("#slingerInput", 0.4);
+  calculateTroopData("#swordsmanInput", 1.2);
+  calculateTroopData("#hopliteInput", 1.4);
+  calculateTroopData("#ramInput", 4.4);
+  calculateTroopData("#archerInput", 1.1);
+  calculateTroopData("#catapultInput", 11.2);
+  calculateTroopData("#carabineerInput", 4);
+  calculateTroopData("#giantInput", 6.5);
+  calculateTroopData("#mortarInput", 31);
+  calculateTroopData("#bombardInput", 5.8);
+  calculateTroopData("#gyrocopterInput", 2.5);
+  calculateTroopData("#cookInput", 4);
+  calculateTroopData("#doctorInput", 10);
+  calculateTroopData("#spartanInput", 1.6);
 
   $("#maps").on("change", function () {
     maps = maps === true ? false : true;
@@ -158,7 +39,8 @@ $("document").ready(function () {
   });
 
   $("#selectAll").on("change", function () {
-    allSelected = !allSelected; // Toggle the state
+    // Toggle the state
+    allSelected = !allSelected;
 
     // Update the state of all checkboxes
     $("#maps, #codeOfHonour, #logistics").prop("checked", allSelected);
@@ -169,21 +51,23 @@ $("document").ready(function () {
     calcTotalUpkeep();
   });
 
-  $("#woodReduction").on("input", function () {
-    calculateTotalMaterial();
-  });
+  $("#woodReduction, #sulphurReduction, #crystalReduction, #wineReduction").on(
+    "input",
+    function () {
+      calculateTotalMaterial();
+    }
+  );
 
-  $("#sulphurReduction").on("input", function () {
-    calculateTotalMaterial();
-  });
-
-  $("#crystalReduction").on("input", function () {
-    calculateTotalMaterial();
-  });
-
-  $("#wineReduction").on("input", function () {
-    calculateTotalMaterial();
-  });
+  function calculateTroopData(inputId, offensivePoints) {
+    $(inputId).on("input", function () {
+      const result = Math.round($(this).val() * offensivePoints);
+      const span = $(this).parent().find("span");
+      span.text(result);
+      calcTotalPoints();
+      calcTotalUpkeep();
+      calculateTotalMaterial();
+    });
+  }
 
   function calcTotalPoints() {
     let totalPoints = 0;

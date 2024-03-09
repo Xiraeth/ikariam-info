@@ -10,105 +10,17 @@ $("document").ready(function () {
   $('.options input[type="checkbox"]').prop("checked", false);
 
   calculateShipData("#ramshipInput", 5);
-
-  $("#ramshipInput").on("input", function () {
-    const result = Math.round($(this).val() * 5);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#ballistashipInput").on("input", function () {
-    const result = Math.round($(this).val() * 6.8);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#catapultshipInput").on("input", function () {
-    const result = Math.round($(this).val() * 6.4);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#fireshipInput").on("input", function () {
-    const result = Math.round($(this).val() * 6.2);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#mortarshipInput").on("input", function () {
-    const result = Math.round($(this).val() * 22.4);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#rocketshipInput").on("input", function () {
-    const result = Math.round($(this).val() * 28);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#steamramInput").on("input", function () {
-    const result = Math.round($(this).val() * 24);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#paddlespeedboatInput").on("input", function () {
-    const result = Math.round($(this).val() * 6.4);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#ballooncarrierInput").on("input", function () {
-    const result = Math.round($(this).val() * 28);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#tenderInput").on("input", function () {
-    const result = Math.round($(this).val() * 16);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
-
-  $("#divingboatInput").on("input", function () {
-    const result = Math.round($(this).val() * 20.2);
-    const span = $(this).parent().find("span");
-    span.text(result);
-    calcTotalPoints();
-    calcTotalUpkeep();
-    calculateTotalMaterial();
-  });
+  calculateShipData("#ballistashipInput", 6.8);
+  calculateShipData("#catapultshipInput", 6.4);
+  calculateShipData("#fireshipInput", 6.2);
+  calculateShipData("#mortarshipInput", 22.4);
+  calculateShipData("#rocketshipInput", 28);
+  calculateShipData("#steamramInput", 24);
+  calculateShipData("#paddlespeedboatInput", 6.4);
+  calculateShipData("#ballooncarrierInput", 28);
+  calculateShipData("#tenderInput", 16);
+  calculateShipData("#divingboatInput", 20.2);
+  calculateShipData("#ramshipInput", 5);
 
   $("#shipMaintenance").on("change", function () {
     shipMaintenance = shipMaintenance === true ? false : true;

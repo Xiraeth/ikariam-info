@@ -41,80 +41,182 @@
     </nav>
 
     <section id="content" class="buildingsContainer">
-      <!-- START -->
+      <!-- CONTENT START -->
+      <div class="options">
+        <div class="earlyResearch">
+          <label for="pulley"
+            ><div>Pulley <span>(-2%)</span></div>
+            <input type="checkbox" name="pulley_check" id="pulley"
+          /></label>
+          <label for="Geometry"
+            ><div>Geometry <span>(-4%)</span></div>
+            <input type="checkbox" name="geometry_check" id="geometry"
+          /></label>
+          <label for="spiritLevel"
+            ><div>Spirit Level <span>(-8%)</span></div>
+            <input type="checkbox" name="spirit_level_check" id="spiritLevel"
+          /></label>
+          <label for="selectAll" style="user-select: none"
+            ><div>Select all</div>
+            <input type="checkbox" name="select_all" id="selectAll"
+          /></label>
+        </div>
+        <div class="reductionBuildings futureResearch">
+          <label for="carpenter">
+            Carpenter level
+            <input
+              type="number"
+              id="carpenter"
+              name="carpenter"
+              step="1"
+              max="50"
+              min="1"
+            />
+          </label>
+
+          <label for="carpenter">
+            Carpenter level
+            <input
+              type="number"
+              id="carpenter"
+              name="carpenter"
+              step="1"
+              max="50"
+              min="1"
+            />
+          </label>
+
+          <label for="carpenter">
+            Carpenter level
+            <input
+              type="number"
+              id="carpenter"
+              name="carpenter"
+              step="1"
+              max="50"
+              min="1"
+            />
+          </label>
+
+          <label for="carpenter">
+            Carpenter level
+            <input
+              type="number"
+              id="carpenter"
+              name="carpenter"
+              step="1"
+              max="50"
+              min="1"
+            />
+          </label>
+
+          <label for="carpenter">
+            Carpenter level
+            <input
+              type="number"
+              id="carpenter"
+              name="carpenter"
+              step="1"
+              max="50"
+              min="1"
+            />
+          </label>
+        </div>
+      </div>
+
       <div class="buildingDiv">
         <a
           class="buildingLink"
-          href="https://ikariam.fandom.com/wiki/Building:Academy"
+          href="https://ikariam.fandom.com/wiki/Building:Dump"
           target="_blank"
         >
           <img
-            src="../images/buildings/Academy_l.webp"
-            alt="Academy"
-            style="width: 40%"
+            src="../images/buildings/Dump_l.webp"
+            alt="Dump"
+            style="width: 125px"
           />
-          <span>Academy</span>
+          <span>Dump</span>
         </a>
 
-        <div class="inputsField">
-          <label for="academyCurrent">
+        <div
+          class="inputsField"
+          data-wood-a="6400"
+          data-wood-b="3"
+          data-wood-c="1.2"
+          data-wood-d="1920"
+          data-wood-n="0"
+          data-marble-a="2048"
+          data-marble-b="1"
+          data-marble-c="1.18"
+          data-marble-d="1920"
+          data-marble-n="0"
+          data-crystal-a="2240"
+          data-crystal-b="1"
+          data-crystal-c="1.17"
+          data-crystal-d="1920"
+          data-crystal-n="0"
+          data-sulphur-a="1920"
+          data-sulphur-b="3"
+          data-sulphur-c="1.2"
+          data-sulphur-d="1920"
+          data-sulphur-n="0"
+        >
+          <label for="dumpCurrent">
             Current level:
             <input
-              id="academyCurrent"
+              id="dumpCurrent"
               type="number"
               class="currentLevel"
               min="1"
               max="50"
             />
           </label>
-          <label for="academyTarget">
+          <label for="dumpTarget">
             Target level:
-            <input
-              id="academyTarget"
-              type="number"
-              class="targetLevel"
-              min="1"
-            />
+            <input id="dumpTarget" type="number" class="targetLevel" min="1" />
           </label>
+          <button class="calculateBtn">Calculate</button>
         </div>
 
         <div class="materialsField">
           <p>
             Wood required:
             <span class="woodRequired"
-              >test<img src="../images/Wood_small.webp" alt="Wood"
+              ><img src="../images/Wood_small.webp" alt="Wood"
             /></span>
           </p>
           <p>
             Wine required:
             <span class="wineRequired">
-              test <img src="../images/Wine_small.webp" alt="" />
+              <img src="../images/Wine_small.webp" alt="" />
             </span>
           </p>
           <p>
             Marble required:
             <span class="marbleRequired">
-              test <img src="../images/Marble_small.webp" alt="" />
+              <img src="../images/Marble_small.webp" alt="" />
             </span>
           </p>
           <p>
             Crystal required:
             <span class="crystalRequired">
-              test <img src="../images/Crystal_small.webp" alt="" />
+              <img src="../images/Crystal_small.webp" alt="" />
             </span>
           </p>
           <p>
             Sulphur required:
             <span class="sulphurRequired">
-              test <img src="../images/Sulphur_small.webp" alt="" />
+              <img src="../images/Sulphur_small.webp" alt="" />
             </span>
           </p>
         </div>
 
         <!-- END OF BUILDING DIV -->
       </div>
+
       <!-- END OF CONTENT-->
     </section>
+    <script src="buildings_calc.js"></script>
     <script src="../app.js"></script>
   </body>
 </html>

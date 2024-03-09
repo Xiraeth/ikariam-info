@@ -4,6 +4,7 @@ $("document").ready(function () {
   let shipMaintenance = false; // 2% for naval units
   let pitch = false; // 4% for naval units
   let seaCharts = false; // 8% for naval units
+  let allSelected = false; // toggle all surveys
   let seafaringFuture = 0;
 
   $('.options input[type="checkbox"]').prop("checked", false);
@@ -119,6 +120,13 @@ $("document").ready(function () {
   $("#seaCharts").on("change", function () {
     seaCharts = seaCharts === true ? false : true;
     calcTotalUpkeep();
+  });
+
+  $("#selectAll").on("change", function () {
+    allSelected = !allSelected; // Toggle the state
+
+    // Update the state of all checkboxes
+    $("#shipMaintenance, #pitch, #seaCharts").prop("checked", allSelected);
   });
 
   $("#seafaringFuture").on("input", function () {

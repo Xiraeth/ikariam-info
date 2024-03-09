@@ -4,6 +4,7 @@ $("document").ready(function () {
   let maps = false; // 2% for land units
   let codeOfHonour = false; // 4% for land units
   let logistics = false; // 8% for land units
+  let allSelected = false; // toggle all surveys
   let militaristicFuture = 0;
 
   $("#spearmanInput").on("input", function () {
@@ -154,6 +155,13 @@ $("document").ready(function () {
   $("#logistics").on("change", function () {
     logistics = logistics === true ? false : true;
     calcTotalUpkeep();
+  });
+
+  $("#selectAll").on("change", function () {
+    allSelected = !allSelected; // Toggle the state
+
+    // Update the state of all checkboxes
+    $("#maps, #codeOfHonour, #logistics").prop("checked", allSelected);
   });
 
   $("#militaristicFuture").on("input", function () {

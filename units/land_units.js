@@ -44,6 +44,13 @@ $("document").ready(function () {
 
     // Update the state of all checkboxes
     $("#maps, #codeOfHonour, #logistics").prop("checked", allSelected);
+
+    // Update variables to calculate ukpeep properly
+    maps = $("#maps").prop("checked");
+    codeOfHonour = $("#codeOfHonour").prop("checked");
+    logistics = $("#logistics").prop("checked");
+
+    calcTotalUpkeep();
   });
 
   $("#militaristicFuture").on("input", function () {

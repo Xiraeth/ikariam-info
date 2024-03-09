@@ -8,6 +8,9 @@ $("document").ready(function () {
   let seafaringFuture = 0;
 
   $('.options input[type="checkbox"]').prop("checked", false);
+
+  calculateShipData("#ramshipInput", 5);
+
   $("#ramshipInput").on("input", function () {
     const result = Math.round($(this).val() * 5);
     const span = $(this).parent().find("span");
@@ -127,6 +130,13 @@ $("document").ready(function () {
 
     // Update the state of all checkboxes
     $("#shipMaintenance, #pitch, #seaCharts").prop("checked", allSelected);
+
+    // Update variables to calculate ukpeep properly
+    shipMaintenance = $("#shipMaintenance").prop("checked");
+    pitch = $("#pitch").prop("checked");
+    seaCharts = $("#seaCharts").prop("checked");
+
+    calcTotalUpkeep();
   });
 
   $("#seafaringFuture").on("input", function () {
@@ -145,6 +155,17 @@ $("document").ready(function () {
   $("#crystalReduction").on("input", function () {
     calculateTotalMaterial();
   });
+
+  function calculateShipData(inputId, offensivePoints) {
+    $(inputId).on("input", function () {
+      const result = Math.round($(this).val() * offensivePoints);
+      const span = $(this).parent().find("span");
+      span.text(result);
+      calcTotalPoints();
+      calcTotalUpkeep();
+      calculateTotalMaterial();
+    });
+  }
 
   function calcTotalPoints() {
     let totalPoints = 0;
